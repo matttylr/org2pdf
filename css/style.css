@@ -1,0 +1,114 @@
+@import url(http://www.princexml.com/fonts/gentium/index.css);
+
+@media print {
+    h1.title { margin-top: 600px; }
+    h2 { page-break-before: always; }
+    h2, h3 { page-break-after: avoid; }
+    p { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+}
+
+@page {
+    size: a4;
+    margin: 2cm;
+    font: 12pt/1.3 "Gentium", serif;
+
+    @bottom-center {
+        content: counter(page);
+        vertical-align: top;
+        padding-top: 1em;
+    }
+}
+
+@page:first {
+    @bottom-center { content: normal; }
+}
+
+#text-table-of-contents a {
+	color: black;
+}
+
+#text-table-of-contents a:after {
+    content: leader('. ') target-counter(attr(href), page);
+}
+
+div#content > p { font-size: 12pt; align: right; }
+
+
+body {
+    font: 10pt/1.3 "Gentium", serif;
+    hyphens: auto;
+    text-align: justify;
+}
+
+a:link, a:visited { text-decoration: none; }
+img { margin: 0; padding: 0; }
+ul, ol, dl { text-align: left; hyphens: manual; }
+ol, ul { margin-left: 1.5em }
+ul { list-style-type: disc; }
+code { font-size: 9pt; }
+dt { font-weight: bold; }
+
+h1, h2, h3, h4, h5, h6 { 
+  padding: 0;
+  margin: 0.7em 0 0.2em; 
+  font-weight: normal;
+  text-align: left;
+  clear: both;
+}
+
+h1 { 
+    color: #365F91;
+    font-size: 24pt;
+    font-weight: normal;
+    text-align: left;
+    padding: 0px 0px 10px 0px;
+    margin-top: 0pt 0pt 15pt 0pt;
+    letter-spacing: 0.25pt;
+    color:#17365D;
+    border-bottom: solid #4F81BD 1.0pt;
+}
+
+h1.title { text-align: left; }
+
+h2 {
+    color: #365F91;
+    font-size: 16pt;
+}
+
+h3 {
+    color: #4F81BD;
+    font-size: 14pt;
+}
+
+h4 {
+    color: #4F81BD;
+    font-size: 12pt;
+}
+
+h5 {
+    color: #4F81BD;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+table { 
+    border-width: 1px; 
+    margin-bottom: 15px;
+}
+
+div#postamble {
+    display: none;
+}
+
+pre {
+    font: 8pt/1.3 courier, monospace;
+    border: 1pt solid #AEBDCC;
+    background-color: #F3F5F7;
+    overflow: auto;
+    padding: 5pt;
+}
+
+code {
+    font: 8pt courier, monospace;
+}

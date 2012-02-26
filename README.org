@@ -1,0 +1,54 @@
+#+TITLE:   org2pdf
+#+AUTHOR:  Matt Taylor
+#+EMAIL:   mattt@polymor.ph
+#+OPTIONS: H:4 num:nil toc:1 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+STYLE:   <link rel="stylesheet" type="text/css" href="css/style.css" />
+#+TEXT:    A simple ORG -> PDF publishing tool
+
+
+* Introduction: org2pdf
+
+Publishing documents authored in org-mode to PDF is a bit tricky.
+Latex is hardly the easiest environment to learn or use and in my
+experience org-export-as-pdf is less than reliable.
+
+In this day and age there is a less stressful solution: publish to
+HTML and then convert to PDF using the wonders of CSS and PrinceXML.
+
+Here how to get a simple publishing workflow up and running.
+
+The stylesheet included is entirely setup for my own purposes but you
+should be able to alter it to fit your own needs without too much
+bother.
+
+PrinceXML is free for personal use but this version inserts a logo on
+the first page.
+
+* Instructions
+
+** Usage: To publish this document to PDF run:
+
+./make-pdf.sh "README.org"
+
+** Dependencies
+
+  * Emacs - Current stock version of GNU Emacs packaged in Ubuntu
+   	Oneiric is known to work.
+
+  * Prince - [[www.princexml.com]]
+
+   	wget http://www.princexml.com/download/prince_8.0-1ubuntu10.04_i386.deb
+   	dpkg -i prince\_8.0-1ubuntu10.04\_i386.deb
+
+** Notes on document structure
+
+*** Inline images
+
+#+CAPTION: This is an image
+#+ATTR_HTML: width="200" alt="Image alt" title="Image title" 
+[[file:img/image.png]]
+
+*** Largest image for A4 page with 2cm margins
+
+width="600"
+height="860" 
